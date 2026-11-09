@@ -71,15 +71,15 @@ app.post("/add.html", function (req, res) {
             req.body.name +
             " we have added your email " +
             req.body.email +
-            " to our distribution list."
+            " to our distribution list.",
         );
-      }
+      },
     );
   });
 });
 
-app.listen(5000, () =>
+app.listen(8888, () =>
   console.log(
-    "Server is running on Port 3000, visit http://localhost:3000/ or http://127.0.0.1:3000 to access your website"
-  )
+    "Server is running on Port 8888, visit http://localhost:8888/ or http://127.0.0.1:8888 to access your website",
+  ),
 );
