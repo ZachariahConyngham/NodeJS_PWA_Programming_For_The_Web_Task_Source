@@ -24,12 +24,16 @@ ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, M
 ### 1. Home page
 
 - leaderboard (button to take you to the leaderboard page for more customisation)
-- friend activity (button to take you to friends page for mroe customisation and further stats)
-- todays stats (button to take you to Your page for mroe customisation and further stats)
+- friend activity (button to take you to friends page for more customisation and further stats)
+- todays stats (button to take you to Your page for more customisation and further stats)
+
+![Home Page example](</public/images/Homepage().png>)
 
 ### 2. Log in page
 
 - self explanatory
+
+![Login Page example](</public/images/Loginpage().png>)
 
 ### 3. Friends page
 
@@ -37,15 +41,21 @@ ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, M
 - friends list
 - search function to find friends
 
+![Friends Page example](</public/images/Friendspage().png>)
+
 ### 4. Leaderboard
 
 - All time leaderboard
 - search function
 
+![Leaderboard Page example](</public/images/Leaderboardpage().png>)
+
 ### 5. Your page
 
 - Shows your stats
 - ability to disable what stats are shown to other people and to who (private, friends only, public)
+
+![Your Page example](</public/images/Statspage().png>)
 
 ## Journal
 
@@ -62,3 +72,12 @@ ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, M
 
 - Found Colour Palette
 - Planned story board
+
+### 13/11/2026
+
+- built storyboard
+
+### 16/11/2026
+
+- Recoloured storyboard
+-
