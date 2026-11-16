@@ -80,4 +80,4 @@ ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, M
 ### 16/11/2026
 
 - Recoloured storyboard
--
+- Started to mess with css and added the html files for each page
