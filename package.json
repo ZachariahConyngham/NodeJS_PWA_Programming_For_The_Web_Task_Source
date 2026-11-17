@@ -3,19 +3,54 @@
   "version": "1.0.0",
   "description": "A demo Node.JS Progressive Web Application with a SQLite backend.",
   "main": "index.js",
-  "scripts": {
+  "scriptss": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "starts": "node index.js"
   },
   "keywords": [],
   "author": "Ben Jones",
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
+    "@floating-ui/dom": "^1.8.0",
     "body-parser": "^1.20.3",
+    "bootstrap": "^5.3.9",
     "express": "^4.21.1",
-    "sqlite3": "^6.0.1"
+    "sqlite3": "^5.1.7",
+    "vanilla-calendar-pro": "^3.4.0"
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "scripts": {
+    "css-compile": "sass --load-path=node_modules --style expanded --source-map --embed-sources scss:css",
+    "css-prefix": "postcss --config postcss.config.js --replace \"css/*.css\" \"!css/*.min.css\"",
+    "build": "npm-run-all --sequential css-compile css-prefix",
+    "watch": "nodemon --watch scss/ --ext scss --exec \"npm run build\"",
+    "serve": "sirv --port 8080 --dev .",
+    "start": "npm-run-all build --parallel watch serve",
+    "lint": "stylelint \"scss/**/*.scss\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.6.2",
+    "nodemon": "^3.1.11",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.33",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.108.2",
+    "sirv-cli": "^3.0.1",
+    "stylelint": "^18.0.0",
+    "stylelint-config-twbs-bootstrap": "^0.5.0"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachariahConyngham/NodeJS_PWA_Programming_For_The_Web_Task_Source.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ZachariahConyngham/NodeJS_PWA_Programming_For_The_Web_Task_Source/issues"
+  },
+  "homepage": "https://github.com/ZachariahConyngham/NodeJS_PWA_Programming_For_The_Web_Task_Source#readme"
 }

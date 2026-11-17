@@ -10,12 +10,12 @@ Add a leaderboard with a tracking (find specific peoples scores) system to find 
 Measurables: Step counter, distance, time (spent exercising)
 
 SQL values
-ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, Month, Week, Day)
+ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, Month, Week, Day), Avatar
 
-| ID  |  Username  |        Email         | Steps (Total) | Steps (Month) | Steps (Week) | Steps (Day) | Distance (Meters) | Time (Total) (Minutes) |
-| :-- | :--------: | :------------------: | :-----------: | :-----------: | :----------: | :---------: | :---------------: | :--------------------: |
-| 1   | godzilla42 | godzilla42@gmail.com |      10       |       4       |      1       |      0      |         3         |           10           |
-| 2   | godzilla43 | godzilla43@gmail.com |      10       |       4       |      3       |      2      |         4         |           20           |
+| ID  |  Username  |        Email         | Steps (Total) | Steps (Month) | Steps (Week) | Steps (Day) | Distance (Meters) | Time (Total) (Minutes) |  Avatar   |
+| :-- | :--------: | :------------------: | :-----------: | :-----------: | :----------: | :---------: | :---------------: | :--------------------: | :-------: |
+| 1   | godzilla42 | godzilla42@gmail.com |      10       |       4       |      1       |      0      |         3         |           10           | image.png |
+| 2   | godzilla43 | godzilla43@gmail.com |      10       |       4       |      3       |      2      |         4         |           20           |  tim.png  |
 
 ## Storyboard
 
@@ -81,3 +81,9 @@ ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, M
 
 - Recoloured storyboard
 - Started to mess with css and added the html files for each page
+
+### 18/11/2026
+
+- looked into components to steal/borrow from bootstrap
+- got tortured by bootstrap
+- built naviagation
