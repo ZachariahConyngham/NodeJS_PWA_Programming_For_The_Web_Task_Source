@@ -20,3 +20,47 @@ SELECT * FROM contact_list;
 -- SELECT * FROM extension WHERE language LIKE '#BASH';
 
 -- DROP TABLE contact_list
+
+SELECT * FROM contact_list;
+
+
+CREATE TABLE Personal_Data (
+    ID INTEGER NOT NULL PRIMARY KEY,
+    Username VARCHAR(20),
+    Email VARCHAR(50),
+    Avatar LONGBLOB
+);
+
+CREATE TABLE Fitness_data (
+    ID INTEGER NOT NULL PRIMARY KEY,
+    Steps_total INTEGER,
+    Steps_month INTEGER,
+    Steps_week INTEGER,
+    Steps_day INTEGER,
+    Distance_meters INTEGER,
+    Time_total INTEGER,
+    Time_month INTEGER,
+    Time_week INTEGER,
+    Time_day INTEGER
+);
+
+DROP TABLE Personal_Data;
+
+DROP TABLE Fitness_data;
+
+SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Steps_total
+FROM Personal_Data
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID;
+
+SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Steps_month
+FROM Personal_Data
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID;
+
+SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Steps_week
+FROM Personal_Data
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID;
+
+SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Steps_day
+FROM Personal_Data
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID;
+

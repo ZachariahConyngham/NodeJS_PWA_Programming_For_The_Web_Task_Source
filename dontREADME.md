@@ -87,3 +87,7 @@ ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, M
 - looked into components to steal/borrow from bootstrap
 - got tortured by bootstrap
 - built naviagation
+
+### 20/11/2026
+
+- Created mock data and a database
