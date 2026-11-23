@@ -48,19 +48,53 @@ DROP TABLE Personal_Data;
 
 DROP TABLE Fitness_data;
 
+
+
+
 SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Steps_total
 FROM Personal_Data
-INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID;
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID
+ORDER BY Fitness_Data.Steps_total DESC;
 
 SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Steps_month
 FROM Personal_Data
-INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID;
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID
+ORDER BY Fitness_Data.Steps_month DESC;
 
 SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Steps_week
 FROM Personal_Data
-INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID;
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID
+ORDER BY Fitness_Data.Steps_week DESC;
 
 SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Steps_day
 FROM Personal_Data
-INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID;
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID
+ORDER BY Fitness_Data.Steps_day DESC;
 
+
+
+SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Distance
+FROM Personal_Data
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID
+ORDER BY Fitness_Data.Distance DESC;
+
+
+SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Time_total
+FROM Personal_Data
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID
+ORDER BY Fitness_Data.Time_total DESC;
+
+SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Time_month
+FROM Personal_Data
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID
+ORDER BY Fitness_Data.Time_month DESC;
+
+SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Time_week
+FROM Personal_Data
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID
+ORDER BY Fitness_Data.Time_week DESC;
+
+SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Time_day
+FROM Personal_Data
+INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID
+ORDER BY Fitness_Data.Time_day DESC;
