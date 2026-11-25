@@ -10,11 +10,11 @@ fetch("./frontEndData.json")
     console.log("error: " + err);
   });
 function appendData(data) {
-  data.forEach(({ name, image, hyperlink, about, language } = rows) => {
+  data.forEach(({ ID, Username, email, avatar, language } = rows) => {
     result += `
         <div class="card">
         <img class="card-image" src="${image}" alt="Product image for the ${name} VSCode extension."/>
-        <h1 class="card-name">${name}</h1>
+        <h1 class="card-name">${ID}</h1>
         <p class="card-about">${about}</p>
         <a class="card-link" href="${hyperlink}"><button class="btn">Read More</button></a>
         </div>

@@ -10,24 +10,20 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("database/data_source.db");
 
 let myString = "[\n";
-db.all("SELECT * FROM extension", function (err, rows) {
+db.all("SELECT * FROM Personal_data", function (err, rows) {
   let myCounter = 0;
   rows.forEach(function (row) {
     // console.log(row.extID + ": " + row.name + ": " + row.hyperlink + ": " + row.about + ": " + row.image + ": " + row.language);
     myString =
       myString +
-      '{\n"extID":' +
-      row.extID +
-      ',\n"name":"' +
-      row.name +
-      '",\n"hyperlink":"' +
-      row.hyperlink +
-      '",\n"about":"' +
-      row.about +
-      '",\n"image":"' +
-      row.image +
-      '",\n"language":"' +
-      row.language;
+      '{\n"ID":' +
+      row.ID +
+      ',\n"Username":"' +
+      row.Username +
+      '",\n"Email":"' +
+      row.Email +
+      '",\n"Avatar":"' +
+      row.Avatar;
     myCounter++;
     if (myCounter == rows.length) {
       myString = myString + '"\n}\n';
@@ -54,7 +50,30 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "public/index.html"));
-  res.sendFile(path.join(__dirname, "public/add.html"));
+  res.sendFile(path.join(__dirname, "public/friends.html"));
+  res.sendFile(path.join(__dirname, "public/leaderboard.html"));
+  res.sendFile(path.join(__dirname, "public/mystats.html"));
+});
+
+app.get("/api/search", async (req, res) => {
+  const searchTerm = req.query.q || "";
+
+  try {
+    let query = "SELECT * FROM your_table LIMIT 50";
+    let params = [];
+
+    // If a search term IS provided, filter the SQL query
+    if (searchTerm && searchTerm.trim() !== "") {
+      query =
+        "SELECT Personal_Data.Username, Personal_Data.Avatar, Fitness_Data.Steps_total FROM Personal_Data INNER JOIN Fitness_Data ON Personal_Data.ID=Fitness_Data.ID ORDER BY Fitness_Data.Steps_total DESC; ?";
+      params = [`%${searchTerm}%`]; // Note: Use $1 instead of ? if using PostgreSQL
+    }
+
+    const [rows] = await db.execute(query, params);
+    res.json(rows); // Send the SQL results back as JSON
+  } catch (err) {
+    res.status(500).json({ error: "Database query failed" });
+  }
 });
 
 app.post("/add.html", function (req, res) {

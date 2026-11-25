@@ -96,3 +96,9 @@ ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, M
 
 - Created SQL quries for the mock data (forgot how to connect to front end will do that later)
 - Built the leaderboard page
+
+### 25/11/2026
+
+- Worked on connecting front end and back end
+- Failed to connect front end to back end
+-
