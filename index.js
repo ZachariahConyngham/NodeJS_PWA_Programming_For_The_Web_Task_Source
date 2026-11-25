@@ -10,36 +10,57 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("database/data_source.db");
 
 let myString = "[\n";
-db.all("SELECT * FROM Personal_data", function (err, rows) {
-  let myCounter = 0;
-  rows.forEach(function (row) {
-    // console.log(row.extID + ": " + row.name + ": " + row.hyperlink + ": " + row.about + ": " + row.image + ": " + row.language);
-    myString =
-      myString +
-      '{\n"ID":' +
-      row.ID +
-      ',\n"Username":"' +
-      row.Username +
-      '",\n"Email":"' +
-      row.Email +
-      '",\n"Avatar":"' +
-      row.Avatar;
-    myCounter++;
-    if (myCounter == rows.length) {
-      myString = myString + '"\n}\n';
-    } else {
-      myString = myString + '"\n},\n';
-    }
-  });
+db.all(
+  "SELECT * FROM Personal_data INNER JOIN Fitness_data ON Personal_data.ID=Fitness_data.ID",
+  function (err, rows) {
+    let myCounter = 0;
+    rows.forEach(function (row) {
+      // console.log(row.extID + ": " + row.name + ": " + row.hyperlink + ": " + row.about + ": " + row.image + ": " + row.language);
+      myString =
+        myString +
+        '{\n"ID":' +
+        row.ID +
+        ',\n"Username":"' +
+        row.Username +
+        '",\n"Email":"' +
+        row.Email +
+        '",\n"Avatar":"' +
+        row.Avatar +
+        '",\n"Stepstotal":"' +
+        row.Steps_total +
+        '",\n"Stepsmonth":"' +
+        row.Steps_month +
+        '",\n"Stepsweek":"' +
+        row.Steps_week +
+        '",\n"Stepsday":"' +
+        row.Steps_day +
+        '",\n"Distance":"' +
+        row.Distance +
+        '",\n"Totaltime":"' +
+        row.Time_total +
+        '",\n"Monthtime":"' +
+        row.Time_month +
+        '",\n"Weektime":"' +
+        row.Time_week +
+        '",\n"Daytime":"' +
+        row.Time_day;
+      myCounter++;
+      if (myCounter == rows.length) {
+        myString = myString + '"\n}\n';
+      } else {
+        myString = myString + '"\n},\n';
+      }
+    });
 
-  // console.log(myString);
-  var fs = require("fs");
-  fs.writeFile("public/frontEndData.json", myString + "]", function (err) {
-    if (err) {
-      console.log(err);
-    }
-  });
-});
+    // console.log(myString);
+    var fs = require("fs");
+    fs.writeFile("public/frontEndData.json", myString + "]", function (err) {
+      if (err) {
+        console.log(err);
+      }
+    });
+  },
+);
 
 const express = require("express");
 const path = require("path");

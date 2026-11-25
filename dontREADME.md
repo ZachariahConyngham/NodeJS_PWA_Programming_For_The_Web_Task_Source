@@ -101,4 +101,8 @@ ID, Username, Email, Steps (Total, Month, Week, Today), Distance, Time (Total, M
 
 - Worked on connecting front end and back end
 - Failed to connect front end to back end
--
+
+### 26/11/2026
+
+- Connected front end to backend :D
+- Need to format the data
